@@ -1,0 +1,75 @@
+PODS:
+  - IQKeyboardManagerSwift (6.5.16)
+  - MapplsAPICore (1.0.9)
+  - MapplsAPIKit/Base (2.0.19)
+  - MapplsDirectionUI/Base (1.0.7)
+  - MapplsDrivingRangePlugin/Base (1.0.2)
+  - MapplsFeedbackKit/Base (1.0.0)
+  - MapplsFeedbackUIKit/Base (1.0.0)
+  - MapplsGeoanalytics/Base (1.0.0)
+  - MapplsGeofenceUI/Base (1.0.1)
+  - MapplsLMS (1.0.0):
+    - MapplsLMS/Complete (= 1.0.0)
+  - MapplsLMS/Base (1.0.0)
+  - MapplsLMS/Complete (1.0.0):
+    - MapplsLMS/Base
+    - MapplsLMS/Dependencies
+  - MapplsLMS/Dependencies (1.0.0):
+    - MapplsAPICore (~> 1.0.8)
+  - MapplsMap/Base (5.13.10)
+  - MapplsNearbyUI/Base (1.0.1)
+  - MapplsRasterCatalogue/Base (0.1.0)
+  - MapplsUIWidgets/Base (1.0.4)
+
+DEPENDENCIES:
+  - IQKeyboardManagerSwift
+  - MapplsAPICore (= 1.0.9)
+  - MapplsAPIKit/Base (= 2.0.19)
+  - MapplsDirectionUI/Base (= 1.0.7)
+  - MapplsDrivingRangePlugin/Base (= 1.0.2)
+  - MapplsFeedbackKit/Base (= 1.0.0)
+  - MapplsFeedbackUIKit/Base (= 1.0.0)
+  - MapplsGeoanalytics/Base (= 1.0.0)
+  - MapplsGeofenceUI/Base (= 1.0.1)
+  - MapplsLMS
+  - MapplsMap/Base (= 5.13.10)
+  - MapplsNearbyUI/Base (= 1.0.1)
+  - MapplsRasterCatalogue/Base (= 0.1.0)
+  - MapplsUIWidgets/Base (= 1.0.4)
+
+SPEC REPOS:
+  trunk:
+    - IQKeyboardManagerSwift
+    - MapplsAPICore
+    - MapplsAPIKit
+    - MapplsDirectionUI
+    - MapplsDrivingRangePlugin
+    - MapplsFeedbackKit
+    - MapplsFeedbackUIKit
+    - MapplsGeoanalytics
+    - MapplsGeofenceUI
+    - MapplsLMS
+    - MapplsMap
+    - MapplsNearbyUI
+    - MapplsRasterCatalogue
+    - MapplsUIWidgets
+
+SPEC CHECKSUMS:
+  IQKeyboardManagerSwift: 12d89768845bb77b55cc092ecc2b1f9370f06b76
+  MapplsAPICore: c9fcc87dfdcfdb40eaa65d9a1fd678810912c869
+  MapplsAPIKit: 94fd0832f6736374c36106b62a8a0ffc29847a71
+  MapplsDirectionUI: f5bd2b472f44c52708749871dc5d620c9cd90586
+  MapplsDrivingRangePlugin: a706c25ca1bda12411743ce9d784f059ffe2e71a
+  MapplsFeedbackKit: ce155f04873c725335ce5b17b27c459bd7847514
+  MapplsFeedbackUIKit: 969469cc9e7312331e19a0d88cce1b7ee6081afa
+  MapplsGeoanalytics: fa3434679c22d73a4ff47fac50a246c9b61b0192
+  MapplsGeofenceUI: 39fa2da134b10880427bb746e3836f11998bd1fb
+  MapplsLMS: 2de68f729ecf6c97df668a0e4c943d760a9a3350
+  MapplsMap: 32a5219c97528079b3679bb07dc3b5d68f49a596
+  MapplsNearbyUI: fb857ec5b9d4a25d5803eb8f50bce7b034343540
+  MapplsRasterCatalogue: b2b21f15928d851fb550392d7fce16a7444991b0
+  MapplsUIWidgets: 3bc69f20f844383a944c710420a01580dd2438e2
+
+PODFILE CHECKSUM: 70a6e2420265881b6267a03935a1225bb86b3d85
+
+COCOAPODS: 1.11.3
