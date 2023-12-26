@@ -87,17 +87,18 @@ struct CoolWidgetEntryView : View {
             }
         default:
             ZStack {
-                
+
                 if image != nil {
                     if widgetFamily == .systemMedium {
                         GeometryReader {geo in
                             image!
                                 .resizable()
-                                .frame(width: geo.size.width, height: geo.size.height)
                                 .scaledToFill()
+                                .frame(width: geo.size.width, height: geo.size.height)
+                                .clipShape(Rectangle())
                                 .opacity(0.8)
                         }
-                      
+
                     }else{
                         image!
                             .resizable()
