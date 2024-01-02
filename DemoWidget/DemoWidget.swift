@@ -18,19 +18,18 @@ struct Provider: IntentTimelineProvider {
         var entries: [SimpleEntry] = []
         
         let currentDate = Date()
+
         for hourOffset in 0 ..< 5 {
             if let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate) {
                 let entry = SimpleEntry(date: entryDate, configuration: configuration)
                 entries.append(entry)
             } else {
-                let errorEntry = SimpleEntry(date: currentDate,
-                                             configuration: configuration)
+                let errorEntry = SimpleEntry(date: currentDate, configuration: configuration)
                 entries.append(errorEntry)
             }
         }
-        
-        let timeline = Timeline(entries: entries,
-                                policy: .atEnd)
+
+        let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
 }
@@ -109,8 +108,7 @@ struct CoolWidgetEntryView : View {
 
                         Link(destination: URL(string: "widget-deeplink://0")!, label: {
 
-                            IconImage(iconName: SharedWidgetClass
-                                .shared.buttons[0].buttonIcon)
+                            IconImage(iconName: SharedWidgetClass.shared.buttons[0].buttonIcon)
                         })
                         
                         Spacer()

@@ -66,6 +66,7 @@ enum SampleType: String, CaseIterable {
     case categoriesMarker
     case customTapGesture
     case dottedLine
+    case editWidget
     
     var title: String {
         switch self {
@@ -189,6 +190,8 @@ enum SampleType: String, CaseIterable {
             return "Custom Tap Gesture"
         case .dottedLine:
             return "Dotted Line"
+        case .editWidget:
+            return "Edit Widget"
         }
     }
 }

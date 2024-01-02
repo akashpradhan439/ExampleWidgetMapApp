@@ -55,22 +55,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
-    
+
     func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         handleDeepLink(url)
         return true
     }
 
-    
     func handleDeepLink(_ url: URL) {
-        
         if let viewController = createViewController(for: url) {
             let vc = UINavigationController(rootViewController: viewController)
             window?.rootViewController = vc
         }
     }
-    
+
     func createViewController(for url: URL) -> UIViewController? {
         if url.scheme == "widget-deeplink" {
             if let host = url.host {
@@ -83,6 +80,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return nil
     }
-    
+
 }
 

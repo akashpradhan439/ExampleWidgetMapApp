@@ -269,6 +269,9 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 let customTapGestureController = DottedLineViewController()
                 customTapGestureController.title = sampleType.title
                 self.navigationController?.pushViewController(customTapGestureController, animated: false)
+            case .editWidget:
+                let vc = EditWidget()
+                self.navigationController?.pushViewController(vc, animated: true)
             default:
                 let vctrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mapVC") as? mapVC
                 self.navigationController?.pushViewController(vctrl!, animated: true)

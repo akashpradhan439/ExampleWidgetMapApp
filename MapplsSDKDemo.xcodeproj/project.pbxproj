@@ -110,6 +110,7 @@
 		A4DA1E9623DB16BF0010743F /* DirectionIndicationViewStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA1E9423DB16BE0010743F /* DirectionIndicationViewStyleKit.swift */; };
 		AD1EC3272B440528009A5369 /* SharedWidgetClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1EC31F2B4404CC009A5369 /* SharedWidgetClass.swift */; };
 		AD1EC3282B440529009A5369 /* SharedWidgetClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1EC31F2B4404CC009A5369 /* SharedWidgetClass.swift */; };
+		AD1EC32A2B442839009A5369 /* EditWidgetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1EC3292B442839009A5369 /* EditWidgetVC.swift */; };
 		AD44CDF22B396496008BEFEE /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD44CDF12B396495008BEFEE /* WidgetKit.framework */; };
 		AD44CDF42B396496008BEFEE /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD44CDF32B396496008BEFEE /* SwiftUI.framework */; };
 		AD44CDF72B396496008BEFEE /* DemoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD44CDF62B396496008BEFEE /* DemoWidget.swift */; };
@@ -278,6 +279,7 @@
 		A4DA1E9323DB16BE0010743F /* DirectionIndicationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionIndicationView.swift; sourceTree = "<group>"; };
 		A4DA1E9423DB16BE0010743F /* DirectionIndicationViewStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionIndicationViewStyleKit.swift; sourceTree = "<group>"; };
 		AD1EC31F2B4404CC009A5369 /* SharedWidgetClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedWidgetClass.swift; sourceTree = SOURCE_ROOT; };
+		AD1EC3292B442839009A5369 /* EditWidgetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWidgetVC.swift; sourceTree = "<group>"; };
 		AD44CDF02B396495008BEFEE /* DemoWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DemoWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD44CDF12B396495008BEFEE /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		AD44CDF32B396496008BEFEE /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -599,6 +601,7 @@
 				68B4DBC52ADE982700AB0F85 /* GradientPolylineViewController.swift */,
 				684CCDD22B04CB1900D38CFE /* CustomTapGestureController.swift */,
 				68DA0A6B2B107C73009E10C4 /* DottedLineViewController.swift */,
+				AD1EC3292B442839009A5369 /* EditWidgetVC.swift */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -1032,6 +1035,7 @@
 				185B7FC3214B848F000785FC /* MultipleShapesExample.m in Sources */,
 				18778C582475435C006DE478 /* UpdateCircleExample.swift in Sources */,
 				47858FEB28A266B6003059A1 /* RasterCatalougeViewController.swift in Sources */,
+				AD1EC32A2B442839009A5369 /* EditWidgetVC.swift in Sources */,
 				68A6BF172106E03C00547929 /* AppDelegate.swift in Sources */,
 				185A74F1249B4C7C00081DAE /* CovidSafetyStatusExample.m in Sources */,
 				6853468A210EF14B000ED395 /* mapVC.swift in Sources */,

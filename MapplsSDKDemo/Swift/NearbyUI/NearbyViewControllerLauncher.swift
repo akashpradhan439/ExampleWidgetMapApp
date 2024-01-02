@@ -24,72 +24,89 @@ class NearbyViewControllerLauncher: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if let deeplink = deeplink {
-            var category : MapplsNearbyCategories?
+            var nearbyCategory : MapplsNearbyCategories!
             
             switch deeplink {
-            case "atm":
-                category = MapplsNearbyCategories(title: "ATM",
-                                                  selectedImage: UIImage(systemName: "creditcard.fill")!,
-                                                  unselectedImage: UIImage(systemName: "creditcard")!,
-                                                  isSelected: true,
-                                                  categoryKeywords: ["FODCOF"],
-                                                        mapNearbyCategoryIcon: UIImage(systemName: "creditcard.fill")!)
-            case "pubsandbars":
-                category = MapplsNearbyCategories(title: "Pubs and bars",
-                                                  selectedImage: UIImage(named: "cocktail")!,
-                                                  unselectedImage: UIImage(named: "cocktail")!,
-                                                    isSelected: true,
-                                                    categoryKeywords: ["FODCOF"],
-                                                  mapNearbyCategoryIcon: UIImage(named: "cocktail")!.imageWith(newSize: .init(width: 25, height: 25)))
-            case "parking":
-                category = MapplsNearbyCategories(title: "Parking",
-                                                            selectedImage: UIImage(systemName: "parkingsign")!,
-                                                            unselectedImage: UIImage(systemName: "parkingsign")!,
-                                                            isSelected: true,
-                                                            categoryKeywords: ["FODCOF"],
-                                                            mapNearbyCategoryIcon: UIImage(systemName: "parkingsign")!)
-            case "hotels":
-                category = MapplsNearbyCategories(title: "Hotels",
-                                                            selectedImage: UIImage(systemName: "bed.double.fill")!,
-                                                            unselectedImage: UIImage(systemName: "bed.double")!,
-                                                            isSelected: true,
-                                                            categoryKeywords: ["FODCOF"],
-                                                            mapNearbyCategoryIcon: UIImage(systemName: "bed.double.fill")!)
-            case "coffee":
-                category = MapplsNearbyCategories(title: "Coffee",
-                                                            selectedImage: UIImage(systemName: "cup.and.saucer.fill")!,
-                                                            unselectedImage: UIImage(systemName: "cup.and.saucer")!,
-                                                            isSelected: true,
-                                                            categoryKeywords: ["FODCOF"],
-                                                            mapNearbyCategoryIcon: UIImage(systemName: "cup.and.saucer.fill")!)
-            case "restaurants":
-                category = MapplsNearbyCategories(title: "Restaurants",
-                                                            selectedImage: UIImage(systemName: "fork.knife.circle.fill")!,
-                                                            unselectedImage: UIImage(systemName: "fork.knife.circle")!,
-                                                            isSelected: true,
-                                                            categoryKeywords: ["FODCOF"],
-                                                            mapNearbyCategoryIcon: UIImage(systemName: "fork.knife.circle.fill")!)
-            case "pharmacy":
-                category = MapplsNearbyCategories(title: "Pharmacy",
-                                                            selectedImage: UIImage(systemName: "bandage.fill")!,
-                                                            unselectedImage: UIImage(systemName: "bandage")!,
-                                                            isSelected: true,
-                                                            categoryKeywords: ["FODCOF"],
-                                                            mapNearbyCategoryIcon: UIImage(systemName: "bandage.fill")! )
-            case "transport":
-                category = MapplsNearbyCategories(title: "Transport",
-                                                            selectedImage: UIImage(systemName: "bus.fill")!,
-                                                            unselectedImage: UIImage(systemName: "bus")!,
-                                                            isSelected: true,
-                                                            categoryKeywords: ["FODCOF"],
-                                                  mapNearbyCategoryIcon: UIImage(systemName: "bus.fill")!)
-            case "hospitals":
-                category = MapplsNearbyCategories(title: "Hospitals",
-                                                  selectedImage: UIImage(systemName: "bolt.heart.fill")!,
-                                                            unselectedImage: UIImage(systemName: "bolt.heart")!,
-                                                            isSelected: true,
-                                                            categoryKeywords: ["FODCOF"],
-                                                            mapNearbyCategoryIcon: UIImage(systemName: "bolt.heart.fill")!)
+            case "0":
+                let action = SharedWidgetClass.shared.buttons[0].buttonAction
+                if let category = buttonActionToCategory(buttonAction: action) {
+                    nearbyCategory = category
+                }else {
+                    return
+                }
+                break
+            case "1":
+                let action = SharedWidgetClass.shared.buttons[1].buttonAction
+                if let category = buttonActionToCategory(buttonAction: action) {
+                    nearbyCategory = category
+                }else {
+                    return
+                }
+                break
+            case "2":
+                let action = SharedWidgetClass.shared.buttons[2].buttonAction
+                if let category = buttonActionToCategory(buttonAction: action) {
+                    nearbyCategory = category
+                }else {
+                    return
+                }
+                break
+            case "3":
+                let action = SharedWidgetClass.shared.buttons[3].buttonAction
+                if let category = buttonActionToCategory(buttonAction: action) {
+                    nearbyCategory = category
+                }else {
+                    return
+                }
+                break
+            case "4":
+                let action = SharedWidgetClass.shared.buttons[4].buttonAction
+                if let category = buttonActionToCategory(buttonAction: action) {
+                    nearbyCategory = category
+                }else {
+                    return
+                }
+                break
+            case "5":
+                let action = SharedWidgetClass.shared.buttons[5].buttonAction
+                if let category = buttonActionToCategory(buttonAction: action) {
+                    nearbyCategory = category
+                }else {
+                    return
+                }
+                break
+            case "6":
+                let action = SharedWidgetClass.shared.buttons[6].buttonAction
+                if let category = buttonActionToCategory(buttonAction: action) {
+                    nearbyCategory = category
+                }else {
+                    return
+                }
+                break
+            case "7":
+                let action = SharedWidgetClass.shared.buttons[7].buttonAction
+                if let category = buttonActionToCategory(buttonAction: action) {
+                    nearbyCategory = category
+                }else {
+                    return
+                }
+                break
+            case "8":
+                let action = SharedWidgetClass.shared.buttons[8].buttonAction
+                if let category = buttonActionToCategory(buttonAction: action) {
+                    nearbyCategory = category
+                }else {
+                    return
+                }
+                break
+            case "9":
+                let action = SharedWidgetClass.shared.buttons[9].buttonAction
+                if let category = buttonActionToCategory(buttonAction: action) {
+                    nearbyCategory = category
+                } else {
+                    return
+                }
+                break
             default:
                 break
             }
@@ -98,14 +115,87 @@ class NearbyViewControllerLauncher: UIViewController {
             
             var  nearbyCategories = [MapplsNearbyCategories]()
 
-
-            if let coffeeCategory = category {
-                nearbyCategories.append(coffeeCategory)
-            }
+            nearbyCategories.append(nearbyCategory)
             
             nearbyUI.nearbyCategories = nearbyCategories
 
-            self.navigationController?.pushViewController(nearbyUI, animated: false)
+            self.navigationController?.pushViewController(nearbyUI, animated: true)
+        }
+    }
+    
+    func buttonActionToCategory(buttonAction: ButtonAction) -> MapplsNearbyCategories? {
+        switch buttonAction {
+        case .restaurant:
+           return MapplsNearbyCategories(title: "Restaurants",
+                                      selectedImage: UIImage(systemName: "fork.knife.circle.fill")!,
+                                      unselectedImage: UIImage(systemName: "fork.knife.circle")!,
+                                      isSelected: true,
+                                      categoryKeywords: ["FODCOF"],
+                                      mapNearbyCategoryIcon: UIImage(systemName: "fork.knife.circle.fill")!)
+        case .hotel:
+            return MapplsNearbyCategories(title: "Hotels",
+                                          selectedImage: UIImage(systemName: "bed.double.fill")!,
+                                          unselectedImage: UIImage(systemName: "bed.double")!,
+                                          isSelected: true,
+                                          categoryKeywords: ["FODCOF"],
+                                          mapNearbyCategoryIcon: UIImage(systemName: "bed.double.fill")!)
+
+        case .parking:
+            return MapplsNearbyCategories(title: "Parking",
+                                          selectedImage: UIImage(systemName: "parkingsign")!,
+                                          unselectedImage: UIImage(systemName: "parkingsign")!,
+                                          isSelected: true,
+                                          categoryKeywords: ["FODCOF"],
+                                          mapNearbyCategoryIcon: UIImage(systemName: "parkingsign")!)
+
+        case .medicine:
+            return MapplsNearbyCategories(title: "Pharmacy",
+                                          selectedImage: UIImage(systemName: "bandage.fill")!,
+                                          unselectedImage: UIImage(systemName: "bandage")!,
+                                          isSelected: true,
+                                          categoryKeywords: ["FODCOF"],
+                                          mapNearbyCategoryIcon: UIImage(systemName: "bandage.fill")! )
+
+        case .coffee:
+            return MapplsNearbyCategories(title: "Coffee",
+                                          selectedImage: UIImage(systemName: "cup.and.saucer.fill")!,
+                                          unselectedImage: UIImage(systemName: "cup.and.saucer")!,
+                                          isSelected: true,
+                                          categoryKeywords: ["FODCOF"],
+                                          mapNearbyCategoryIcon: UIImage(systemName: "cup.and.saucer.fill")!)
+
+        case .bus:
+            return MapplsNearbyCategories(title: "Transport",
+                                          selectedImage: UIImage(systemName: "bus.fill")!,
+                                          unselectedImage: UIImage(systemName: "bus")!,
+                                          isSelected: true,
+                                          categoryKeywords: ["FODCOF"],
+                                mapNearbyCategoryIcon: UIImage(systemName: "bus.fill")!)
+        case .hospital:
+            return MapplsNearbyCategories(title: "Hospitals",
+                                          selectedImage: UIImage(systemName: "bolt.heart.fill")!,
+                                                    unselectedImage: UIImage(systemName: "bolt.heart")!,
+                                                    isSelected: true,
+                                                    categoryKeywords: ["FODCOF"],
+                                                    mapNearbyCategoryIcon: UIImage(systemName: "bolt.heart.fill")!)
+
+        case .atm:
+            return MapplsNearbyCategories(title: "ATM",
+                                          selectedImage: UIImage(systemName: "creditcard.fill")!,
+                                          unselectedImage: UIImage(systemName: "creditcard")!,
+                                          isSelected: true,
+                                          categoryKeywords: ["FODCOF"],
+                                                mapNearbyCategoryIcon: UIImage(systemName: "creditcard.fill")!)
+
+        case .bar:
+            return MapplsNearbyCategories(title: "Pubs and bars",
+                                  selectedImage: UIImage(named: "cocktail")!,
+                                  unselectedImage: UIImage(named: "cocktail")!,
+                                    isSelected: true,
+                                    categoryKeywords: ["FODCOF"],
+                                  mapNearbyCategoryIcon: UIImage(named: "cocktail")!.imageWith(newSize: .init(width: 25, height: 25)))
+        case .home:
+            return nil
         }
     }
     
