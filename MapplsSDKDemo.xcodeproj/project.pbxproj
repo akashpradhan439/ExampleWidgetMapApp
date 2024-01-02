@@ -108,6 +108,8 @@
 		A4ACEA4D23D80C6400447644 /* InstructionTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ACEA4C23D80C6400447644 /* InstructionTableVC.swift */; };
 		A4DA1E9523DB16BF0010743F /* DirectionIndicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA1E9323DB16BE0010743F /* DirectionIndicationView.swift */; };
 		A4DA1E9623DB16BF0010743F /* DirectionIndicationViewStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA1E9423DB16BE0010743F /* DirectionIndicationViewStyleKit.swift */; };
+		AD1EC3272B440528009A5369 /* SharedWidgetClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1EC31F2B4404CC009A5369 /* SharedWidgetClass.swift */; };
+		AD1EC3282B440529009A5369 /* SharedWidgetClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1EC31F2B4404CC009A5369 /* SharedWidgetClass.swift */; };
 		AD44CDF22B396496008BEFEE /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD44CDF12B396495008BEFEE /* WidgetKit.framework */; };
 		AD44CDF42B396496008BEFEE /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD44CDF32B396496008BEFEE /* SwiftUI.framework */; };
 		AD44CDF72B396496008BEFEE /* DemoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD44CDF62B396496008BEFEE /* DemoWidget.swift */; };
@@ -275,6 +277,7 @@
 		A4ACEA4C23D80C6400447644 /* InstructionTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionTableVC.swift; sourceTree = "<group>"; };
 		A4DA1E9323DB16BE0010743F /* DirectionIndicationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionIndicationView.swift; sourceTree = "<group>"; };
 		A4DA1E9423DB16BE0010743F /* DirectionIndicationViewStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionIndicationViewStyleKit.swift; sourceTree = "<group>"; };
+		AD1EC31F2B4404CC009A5369 /* SharedWidgetClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedWidgetClass.swift; sourceTree = SOURCE_ROOT; };
 		AD44CDF02B396495008BEFEE /* DemoWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DemoWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD44CDF12B396495008BEFEE /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		AD44CDF32B396496008BEFEE /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -603,6 +606,7 @@
 		68A6BF0A2106E03C00547929 = {
 			isa = PBXGroup;
 			children = (
+				AD1EC31F2B4404CC009A5369 /* SharedWidgetClass.swift */,
 				AD44CE062B3A89AF008BEFEE /* DemoWidgetExtension.entitlements */,
 				68A6BF152106E03C00547929 /* MapplsSDKDemo */,
 				AD44CDF52B396496008BEFEE /* DemoWidget */,
@@ -888,7 +892,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\n";
+			shellScript = "
+";
 		};
 		686A8290BF05B9AADB3379ED /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -928,6 +933,7 @@
 				D1FC987C289103BD00C35D3A /* MapplsMapViewSampleSwiftUI.swift in Sources */,
 				A41DFAC9239906CE00D39EF9 /* AutoSuggestVC.swift in Sources */,
 				68D07A9425B555AC005B86CB /* LocationChooserTableViewDirectionUIPlugin.swift in Sources */,
+				AD1EC3272B440528009A5369 /* SharedWidgetClass.swift in Sources */,
 				18778C4D24751F33006DE478 /* DraggableMapMarkerVC.swift in Sources */,
 				684CCDD32B04CB1900D38CFE /* CustomTapGestureController.swift in Sources */,
 				D1F199AC2A04FD7000836308 /* MapplsAttributeOptions+Extension.swift in Sources */,
@@ -1037,6 +1043,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD1EC3282B440529009A5369 /* SharedWidgetClass.swift in Sources */,
 				AD44CDF72B396496008BEFEE /* DemoWidget.swift in Sources */,
 				AD44CDFC2B39649B008BEFEE /* DemoWidget.intentdefinition in Sources */,
 			);
@@ -1202,6 +1209,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 30;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 3TGUQLGG52;
 				INFOPLIST_FILE = MapplsSDKDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1232,6 +1240,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 30;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 3TGUQLGG52;
 				INFOPLIST_FILE = MapplsSDKDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1260,6 +1269,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 3TGUQLGG52;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DemoWidget/Info.plist;
@@ -1293,6 +1303,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 3TGUQLGG52;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DemoWidget/Info.plist;

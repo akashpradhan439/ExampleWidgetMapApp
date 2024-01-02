@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-
-//
-//  Created by CE Info on 24/07/18.
-//  Copyright © 2022 Mappls. All rights reserved.
-//
 
 import UIKit
 import MapplsMap

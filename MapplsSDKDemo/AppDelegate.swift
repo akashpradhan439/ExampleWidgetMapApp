@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         MapplsAccountManager.setClientId("33OkryzDZsLl3oK3-y3-oVmAzZsGx95_J6Wi4-8GSKmiKNQrP63N9cf-b7LtqxG6kxlj3aL3RNGbGc4LG5xvaFNYAOXJ99gU")
         MapplsAccountManager.setClientSecret("lrFxI-iSEg8guc_qKASYZGSASKW-zZrW1mphvEHG770-sk4O09QOMnmAo91BaHs5-oI4OijwF0y40NwFZ4Sean6cVwY-RzcxEH_u23J3Ydk=")
         
-
         if let url = launchOptions?[.url] as? URL {
            handleDeepLink(url)
         }
