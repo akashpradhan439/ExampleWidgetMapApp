@@ -19,7 +19,7 @@ class InitialVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         locManager.requestWhenInUseAuthorization()
 
         if #available(iOS 14.0, *) {

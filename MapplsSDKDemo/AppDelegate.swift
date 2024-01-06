@@ -8,6 +8,7 @@
 
 import UIKit
 import MapplsAPICore
+import WidgetKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+       
         MapplsAccountManager.setMapSDKKey("b340c78affb4b7985d8cd820405c03d2")
         MapplsAccountManager.setRestAPIKey("b340c78affb4b7985d8cd820405c03d2")
         MapplsAccountManager.setClientId("33OkryzDZsLl3oK3-y3-oVmAzZsGx95_J6Wi4-8GSKmiKNQrP63N9cf-b7LtqxG6kxlj3aL3RNGbGc4LG5xvaFNYAOXJ99gU")

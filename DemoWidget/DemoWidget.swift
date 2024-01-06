@@ -4,47 +4,46 @@ import WidgetKit
 import SwiftUI
 import Intents
 
-struct Provider: IntentTimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationIntent())
-    }
-    
-    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), configuration: configuration)
+struct Provider: TimelineProvider {
+
+    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> Void) {
+        let entry = SimpleEntry(date: Date())
         completion(entry)
     }
-    
-    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-        
-        let currentDate = Date()
 
-        for hourOffset in 0 ..< 5 {
-            if let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate) {
-                let entry = SimpleEntry(date: entryDate, configuration: configuration)
-                entries.append(entry)
-            } else {
-                let errorEntry = SimpleEntry(date: currentDate, configuration: configuration)
-                entries.append(errorEntry)
-            }
-        }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
+    func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> Void) {
+        let entry = SimpleEntry(date: .now)
+        let timeline = Timeline(entries: [entry], policy: .never)
         completion(timeline)
+    }
+
+    func placeholder(in context: Context) -> SimpleEntry {
+        SimpleEntry(date: Date())
     }
 }
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
-    let configuration: ConfigurationIntent
 }
 
 struct CoolWidgetEntryView : View {
     var entry: Provider.Entry
-    @Environment(\.widgetFamily) var widgetFamily
     
+    @Environment(\.widgetFamily) var widgetFamily
+
     @State var image: Image? = nil
     
+    @State var button1: String = "house"
+    @State var button2: String = "cross.case.fill"
+    @State var button3: String = "cup.and.saucer.fill"
+    @State var button4: String = "building"
+    @State var button5: String = "pills.fill"
+    @State var button6: String = "bus"
+    @State var button7: String = "parkingsign"
+    @State var button8: String = "cocktail"
+    @State var button9: String = "fork.knife"
+    @State var button10: String = "banknote.fill"
+
     var body: some View {
         switch widgetFamily {
         case .systemSmall:
@@ -53,8 +52,7 @@ struct CoolWidgetEntryView : View {
                 if image != nil {
                     image!
                         .resizable()
-                        .scaledToFill()
-                        .opacity(0.8)
+                        .scaledToFit()
                 }
             }
         default:
@@ -98,96 +96,92 @@ struct CoolWidgetEntryView : View {
                         .cornerRadius(15)
                         .padding(10)
                     })
+                    
                     if widgetFamily == .systemMedium {
                         Spacer()
                     }
 
-                    HStack {
-
-                        Spacer()
-
-                        Link(destination: URL(string: "widget-deeplink://0")!, label: {
-
-                            IconImage(iconName: SharedWidgetClass.shared.buttons[0].buttonIcon)
-                        })
-                        
-                        Spacer()
-                        
-                        Link(destination: URL(string: "widget-deeplink://1")!, label: {
-                            
-                            IconImage(iconName: SharedWidgetClass.shared.buttons[1].buttonIcon)
-                        })
-                        
-                        Spacer()
-                        
-                        Link(destination: URL(string: "widget-deeplink://2")!, label: {
-                            
-                            IconImage(iconName: SharedWidgetClass.shared.buttons[2].buttonIcon)
-                            
-                        })
-                        Spacer()
-                    }
-                    .padding([.top, .bottom], 10)
-                    .background(.white.opacity(0.3))
-                    
-                    if widgetFamily == .systemLarge {
-                        
+                    VStack {
                         HStack {
+
                             Spacer()
-                            
-                            Link(destination: URL(string: "widget-deeplink://3")!, label: {
-                                
-                                IconImage(iconName: SharedWidgetClass.shared.buttons[3].buttonIcon)
-                                
+
+                            Link(destination: URL(string: "widget-deeplink://0")!, label: {
+
+                                IconImage(iconName: button1)
                             })
                             
                             Spacer()
                             
-                            Link(destination: URL(string: "widget-deeplink://4")!, label: {
-                                
-                                IconImage(iconName: SharedWidgetClass.shared.buttons[4].buttonIcon)
+                            Link(destination: URL(string: "widget-deeplink://1")!, label: {
+
+                                IconImage(iconName: button2)
                             })
                             
                             Spacer()
                             
-                            Link(destination: URL(string: "widget-deeplink://5")!, label: {
+                            Link(destination: URL(string: "widget-deeplink://2")!, label: {
                                 
-                                IconImage(iconName: SharedWidgetClass.shared.buttons[5].buttonIcon)
-                                
-                            })
-                            
-                            Spacer()
-                        }
-                        .padding([.top, .bottom], 10)
-                        .background(.white.opacity(0.3))
-                        
-                        HStack {
-                            Spacer()
-                            
-                            Link(destination: URL(string: "widget-deeplink://6")!, label: {
-                                
-                                IconImage(iconName: SharedWidgetClass.shared.buttons[6].buttonIcon)
-                                
-                            })
-                            Spacer()
-                            
-                            Link(destination: URL(string: "widget-deeplink://7")!, label: {
-                                
-                                IconImage(iconName: SharedWidgetClass.shared.buttons[7].buttonIcon)
-                            })
-                            
-                            Spacer()
-                            
-                            Link(destination: URL(string: "widget-deeplink://8")!, label: {
-                                
-                                IconImage(iconName: SharedWidgetClass.shared.buttons[8].buttonIcon)
-                                
+                                IconImage(iconName: button3)
                             })
                             Spacer()
                         }
-                        .padding([.top, .bottom], 10)
-                        .background(.white.opacity(0.3))
+                        
+                        if widgetFamily == .systemLarge {
+                            
+                            HStack {
+                                Spacer()
+                                
+                                Link(destination: URL(string: "widget-deeplink://3")!, label: {
+                                    
+                                    IconImage(iconName: button4)
+                                })
+                                
+                                Spacer()
+                                
+                                Link(destination: URL(string: "widget-deeplink://4")!, label: {
+
+                                    IconImage(iconName: button5)
+                                })
+                                
+                                Spacer()
+                                
+                                Link(destination: URL(string: "widget-deeplink://5")!, label: {
+
+                                    IconImage(iconName: button6)
+                                })
+                                
+                                Spacer()
+                            }
+
+                            
+                            HStack {
+                                Spacer()
+                                
+                                Link(destination: URL(string: "widget-deeplink://6")!, label: {
+                                    
+                                    IconImage(iconName: button7)
+                                })
+                                Spacer()
+                                
+                                Link(destination: URL(string: "widget-deeplink://7")!, label: {
+
+                                    IconImage(iconName: button8)
+                                })
+                                
+                                Spacer()
+                                
+                                Link(destination: URL(string: "widget-deeplink://8")!, label: {
+                                    
+                                    IconImage(iconName: button9)
+                                })
+                                Spacer()
+                            }
+                        }
                     }
+                    .background(.ultraThinMaterial)
+                    .cornerRadius(20)
+                    .padding(widgetFamily == .systemMedium ? 10 : 20)
                 }
             }
             .onAppear {
@@ -200,6 +194,21 @@ struct CoolWidgetEntryView : View {
                 if let imageData = try? Data(contentsOf: fileURL!), let image = UIImage(data: imageData) {
                     self.image = Image(uiImage: image)
                 }
+                
+                if let iconName = UserDefaults(suiteName: "group.com.Mappls.MapplsSDKDemo.DemoWidget")!.string(forKey: "button1") {
+                    button1 = iconName
+                }else {
+                    return
+                }
+                button2 = UserDefaults(suiteName: "group.com.Mappls.MapplsSDKDemo.DemoWidget")!.string(forKey: "button2")!
+                button3 = UserDefaults(suiteName: "group.com.Mappls.MapplsSDKDemo.DemoWidget")!.string(forKey: "button3")!
+                button4 = UserDefaults(suiteName: "group.com.Mappls.MapplsSDKDemo.DemoWidget")!.string(forKey: "button4")!
+                button5 = UserDefaults(suiteName: "group.com.Mappls.MapplsSDKDemo.DemoWidget")!.string(forKey: "button5")!
+                button6 = UserDefaults(suiteName: "group.com.Mappls.MapplsSDKDemo.DemoWidget")!.string(forKey: "button6")!
+                button7 = UserDefaults(suiteName: "group.com.Mappls.MapplsSDKDemo.DemoWidget")!.string(forKey: "button7")!
+                button8 = UserDefaults(suiteName: "group.com.Mappls.MapplsSDKDemo.DemoWidget")!.string(forKey: "button8")!
+                button9 = UserDefaults(suiteName: "group.com.Mappls.MapplsSDKDemo.DemoWidget")!.string(forKey: "button9")!
+                button10 = UserDefaults(suiteName: "group.com.Mappls.MapplsSDKDemo.DemoWidget")!.string(forKey: "button10")!
             }
         }
     }
@@ -210,28 +219,12 @@ struct DemoWidget: Widget {
     let kind: String = "CoolWidget"
     
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
+        StaticConfiguration(kind: kind, provider: Provider(), content: { entry in
             CoolWidgetEntryView(entry: entry)
-        }
-        .configurationDisplayName("My Widget")
+        })
+        .configurationDisplayName("Mappls Widget")
         .description("This is an example widget.")
         .supportedFamilies([.systemMedium, .systemSmall, .systemLarge])
-    }
-}
-
-struct IconImage: View {
-    
-    var iconName: String
-    
-    var body: some View {
-        Image(systemName: iconName)
-            .resizable()
-            .scaledToFit()
-            .frame(width: 30, height: 30)
-            .padding(10)
-            .background(.thinMaterial)
-            .cornerRadius(15)
-            .padding([.leading, .trailing], 20)
     }
 }
 

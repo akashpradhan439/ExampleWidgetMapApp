@@ -108,9 +108,9 @@
 		A4ACEA4D23D80C6400447644 /* InstructionTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ACEA4C23D80C6400447644 /* InstructionTableVC.swift */; };
 		A4DA1E9523DB16BF0010743F /* DirectionIndicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA1E9323DB16BE0010743F /* DirectionIndicationView.swift */; };
 		A4DA1E9623DB16BF0010743F /* DirectionIndicationViewStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA1E9423DB16BE0010743F /* DirectionIndicationViewStyleKit.swift */; };
-		AD1EC3272B440528009A5369 /* SharedWidgetClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1EC31F2B4404CC009A5369 /* SharedWidgetClass.swift */; };
-		AD1EC3282B440529009A5369 /* SharedWidgetClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1EC31F2B4404CC009A5369 /* SharedWidgetClass.swift */; };
 		AD1EC32A2B442839009A5369 /* EditWidgetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1EC3292B442839009A5369 /* EditWidgetVC.swift */; };
+		AD3E0BD72B4962C200B43D10 /* SharedWidgetClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1EC31F2B4404CC009A5369 /* SharedWidgetClass.swift */; };
+		AD3E0BD82B4962C300B43D10 /* SharedWidgetClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1EC31F2B4404CC009A5369 /* SharedWidgetClass.swift */; };
 		AD44CDF22B396496008BEFEE /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD44CDF12B396495008BEFEE /* WidgetKit.framework */; };
 		AD44CDF42B396496008BEFEE /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD44CDF32B396496008BEFEE /* SwiftUI.framework */; };
 		AD44CDF72B396496008BEFEE /* DemoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD44CDF62B396496008BEFEE /* DemoWidget.swift */; };
@@ -936,7 +936,6 @@
 				D1FC987C289103BD00C35D3A /* MapplsMapViewSampleSwiftUI.swift in Sources */,
 				A41DFAC9239906CE00D39EF9 /* AutoSuggestVC.swift in Sources */,
 				68D07A9425B555AC005B86CB /* LocationChooserTableViewDirectionUIPlugin.swift in Sources */,
-				AD1EC3272B440528009A5369 /* SharedWidgetClass.swift in Sources */,
 				18778C4D24751F33006DE478 /* DraggableMapMarkerVC.swift in Sources */,
 				684CCDD32B04CB1900D38CFE /* CustomTapGestureController.swift in Sources */,
 				D1F199AC2A04FD7000836308 /* MapplsAttributeOptions+Extension.swift in Sources */,
@@ -1025,6 +1024,7 @@
 				D115F9A22A0A3E81003CBEDC /* PredictiveRouteManeuverCell.swift in Sources */,
 				A45C2997239A157100EC81F6 /* CustomIndoorVC.swift in Sources */,
 				1861996824DC30C5004D5547 /* UserDefaultsManager.swift in Sources */,
+				AD3E0BD82B4962C300B43D10 /* SharedWidgetClass.swift in Sources */,
 				D17F0558288FD1ED005333E8 /* SampleTypeSwiftUI.swift in Sources */,
 				68534685210EDF59000ED395 /* ListVCOC.m in Sources */,
 				189C4BF025A9877500B2ADB2 /* LocationChooserTableViewCell.swift in Sources */,
@@ -1047,8 +1047,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD1EC3282B440529009A5369 /* SharedWidgetClass.swift in Sources */,
 				AD44CDF72B396496008BEFEE /* DemoWidget.swift in Sources */,
+				AD3E0BD72B4962C200B43D10 /* SharedWidgetClass.swift in Sources */,
 				AD44CDFC2B39649B008BEFEE /* DemoWidget.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1279,7 +1279,7 @@
 				INFOPLIST_FILE = DemoWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = DemoWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 MMI. All rights reserved.";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1313,7 +1313,7 @@
 				INFOPLIST_FILE = DemoWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = DemoWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 MMI. All rights reserved.";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
