@@ -109,7 +109,6 @@
 		A4DA1E9523DB16BF0010743F /* DirectionIndicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA1E9323DB16BE0010743F /* DirectionIndicationView.swift */; };
 		A4DA1E9623DB16BF0010743F /* DirectionIndicationViewStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA1E9423DB16BE0010743F /* DirectionIndicationViewStyleKit.swift */; };
 		AD1EC32A2B442839009A5369 /* EditWidgetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1EC3292B442839009A5369 /* EditWidgetVC.swift */; };
-		AD3E0BD72B4962C200B43D10 /* SharedWidgetClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1EC31F2B4404CC009A5369 /* SharedWidgetClass.swift */; };
 		AD3E0BD82B4962C300B43D10 /* SharedWidgetClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1EC31F2B4404CC009A5369 /* SharedWidgetClass.swift */; };
 		AD44CDF22B396496008BEFEE /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD44CDF12B396495008BEFEE /* WidgetKit.framework */; };
 		AD44CDF42B396496008BEFEE /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD44CDF32B396496008BEFEE /* SwiftUI.framework */; };
@@ -278,7 +277,7 @@
 		A4ACEA4C23D80C6400447644 /* InstructionTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionTableVC.swift; sourceTree = "<group>"; };
 		A4DA1E9323DB16BE0010743F /* DirectionIndicationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionIndicationView.swift; sourceTree = "<group>"; };
 		A4DA1E9423DB16BE0010743F /* DirectionIndicationViewStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionIndicationViewStyleKit.swift; sourceTree = "<group>"; };
-		AD1EC31F2B4404CC009A5369 /* SharedWidgetClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedWidgetClass.swift; sourceTree = SOURCE_ROOT; };
+		AD1EC31F2B4404CC009A5369 /* SharedWidgetClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SharedWidgetClass.swift; path = MapplsSDKDemo/SharedWidgetClass.swift; sourceTree = SOURCE_ROOT; };
 		AD1EC3292B442839009A5369 /* EditWidgetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWidgetVC.swift; sourceTree = "<group>"; };
 		AD44CDF02B396495008BEFEE /* DemoWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DemoWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD44CDF12B396495008BEFEE /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -609,7 +608,6 @@
 		68A6BF0A2106E03C00547929 = {
 			isa = PBXGroup;
 			children = (
-				AD1EC31F2B4404CC009A5369 /* SharedWidgetClass.swift */,
 				AD44CE062B3A89AF008BEFEE /* DemoWidgetExtension.entitlements */,
 				68A6BF152106E03C00547929 /* MapplsSDKDemo */,
 				AD44CDF52B396496008BEFEE /* DemoWidget */,
@@ -639,6 +637,7 @@
 				68417CC3210B2DCE00424A00 /* Swift */,
 				68417CC2210B2DB800424A00 /* Objective C */,
 				68A6BF162106E03C00547929 /* AppDelegate.swift */,
+				AD1EC31F2B4404CC009A5369 /* SharedWidgetClass.swift */,
 				68A6BF182106E03C00547929 /* ViewController.swift */,
 				68A6BF1A2106E03C00547929 /* Main.storyboard */,
 				4726F0702648503B007EDB5E /* ShapeCell.xib */,
@@ -1048,7 +1047,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD44CDF72B396496008BEFEE /* DemoWidget.swift in Sources */,
-				AD3E0BD72B4962C200B43D10 /* SharedWidgetClass.swift in Sources */,
 				AD44CDFC2B39649B008BEFEE /* DemoWidget.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

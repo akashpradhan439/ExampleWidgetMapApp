@@ -63,7 +63,6 @@ class SharedWidgetClass {
         buttons[2] = third
         
         if #available(iOS 14.0, *) {
-            WidgetCenter.shared.reloadAllTimelines()
             WidgetCenter.shared.reloadTimelines(ofKind: "CoolWidget")
         }
     }

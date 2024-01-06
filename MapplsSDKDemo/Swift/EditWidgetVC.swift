@@ -26,6 +26,6 @@ class EditWidget: UIViewController {
     }
 
     @objc func changeSecondIcon(){
-        SharedWidgetClass.shared.setTopThree(first: ButtonData(buttonAction: .medicine), second: ButtonData(buttonAction: .hotel), third: ButtonData(buttonAction: .hospital))
+        SharedWidgetClass.shared.setTopThree(first: ButtonData(buttonAction: .parking), second: ButtonData(buttonAction: .coffee), third: ButtonData(buttonAction: .bus))
     }
 }
