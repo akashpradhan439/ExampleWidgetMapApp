@@ -5,50 +5,49 @@ import SwiftUI
 import Intents
 
 struct Provider: TimelineProvider {
+    @AppStorage("MapplsWidget", store: UserDefaults(suiteName: "group.com.Mappls.MapplsSDKDemo.DemoWidget")) var primaryData : Data = Data()
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> Void) {
-        let entry = SimpleEntry(date: Date())
+        guard let buttonsData = try? JSONDecoder().decode(ButtonsData.self, from: primaryData) else {
+            return
+        }
+        let entry = SimpleEntry(date: Date(), buttonsData: buttonsData)
         completion(entry)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> Void) {
-        let entry = SimpleEntry(date: .now)
+        guard let buttonsData = try? JSONDecoder().decode(ButtonsData.self, from: primaryData) else {
+            return
+        }
+        
+        let entry = SimpleEntry(date: Date(), buttonsData: buttonsData)
+        
         let timeline = Timeline(entries: [entry], policy: .never)
         completion(timeline)
     }
 
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date())
+        SimpleEntry(date: Date(), buttonsData: ButtonsData())
     }
 }
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
+    let buttonsData: ButtonsData
 }
 
 struct CoolWidgetEntryView : View {
     var entry: Provider.Entry
-    
+        
     @Environment(\.widgetFamily) var widgetFamily
 
     @State var image: Image? = nil
-    
-    @State var button1: String = "house"
-    @State var button2: String = "cross.case.fill"
-    @State var button3: String = "cup.and.saucer.fill"
-    @State var button4: String = "building"
-    @State var button5: String = "pills.fill"
-    @State var button6: String = "bus"
-    @State var button7: String = "parkingsign"
-    @State var button8: String = "cocktail"
-    @State var button9: String = "fork.knife"
-    @State var button10: String = "banknote.fill"
 
     var body: some View {
         switch widgetFamily {
         case .systemSmall:
             ZStack {
-                
+
                 if image != nil {
                     image!
                         .resizable()
@@ -106,23 +105,23 @@ struct CoolWidgetEntryView : View {
 
                             Spacer()
 
-                            Link(destination: URL(string: "widget-deeplink://0")!, label: {
-
-                                IconImage(iconName: button1)
-                            })
-                            
-                            Spacer()
-                            
                             Link(destination: URL(string: "widget-deeplink://1")!, label: {
 
-                                IconImage(iconName: button2)
+                                IconImage(iconName: entry.buttonsData.but1.values.first!)
                             })
                             
                             Spacer()
                             
                             Link(destination: URL(string: "widget-deeplink://2")!, label: {
+
+                                IconImage(iconName: entry.buttonsData.but2.values.first!)
+                            })
+                            
+                            Spacer()
+                            
+                            Link(destination: URL(string: "widget-deeplink://3")!, label: {
                                 
-                                IconImage(iconName: button3)
+                                IconImage(iconName: entry.buttonsData.but3.values.first!)
                             })
                             Spacer()
                         }
@@ -132,23 +131,23 @@ struct CoolWidgetEntryView : View {
                             HStack {
                                 Spacer()
                                 
-                                Link(destination: URL(string: "widget-deeplink://3")!, label: {
-                                    
-                                    IconImage(iconName: button4)
-                                })
-                                
-                                Spacer()
-                                
                                 Link(destination: URL(string: "widget-deeplink://4")!, label: {
-
-                                    IconImage(iconName: button5)
+                                    
+                                    IconImage(iconName: entry.buttonsData.but4.values.first!)
                                 })
                                 
                                 Spacer()
                                 
                                 Link(destination: URL(string: "widget-deeplink://5")!, label: {
 
-                                    IconImage(iconName: button6)
+                                    IconImage(iconName: entry.buttonsData.but5.values.first!)
+                                })
+                                
+                                Spacer()
+                                
+                                Link(destination: URL(string: "widget-deeplink://6")!, label: {
+
+                                    IconImage(iconName: entry.buttonsData.but6.values.first!)
                                 })
                                 
                                 Spacer()
@@ -158,22 +157,22 @@ struct CoolWidgetEntryView : View {
                             HStack {
                                 Spacer()
                                 
-                                Link(destination: URL(string: "widget-deeplink://6")!, label: {
-                                    
-                                    IconImage(iconName: button7)
-                                })
-                                Spacer()
-                                
                                 Link(destination: URL(string: "widget-deeplink://7")!, label: {
-
-                                    IconImage(iconName: button8)
+                                    
+                                    IconImage(iconName: entry.buttonsData.but7.values.first!)
                                 })
-                                
                                 Spacer()
                                 
                                 Link(destination: URL(string: "widget-deeplink://8")!, label: {
+
+                                    IconImage(iconName: entry.buttonsData.but8.values.first!)
+                                })
+                                
+                                Spacer()
+                                
+                                Link(destination: URL(string: "widget-deeplink://9")!, label: {
                                     
-                                    IconImage(iconName: button9)
+                                    IconImage(iconName: entry.buttonsData.but9.values.first!)
                                 })
                                 Spacer()
                             }
@@ -190,25 +189,10 @@ struct CoolWidgetEntryView : View {
                 if fileURL == nil {
                     return
                 }
-                
+                print(entry.buttonsData.but1.values.first!)
                 if let imageData = try? Data(contentsOf: fileURL!), let image = UIImage(data: imageData) {
                     self.image = Image(uiImage: image)
                 }
-                
-                if let iconName = UserDefaults(suiteName: "group.com.Mappls.MapplsSDKDemo.DemoWidget")!.string(forKey: "button1") {
-                    button1 = iconName
-                }else {
-                    return
-                }
-                button2 = UserDefaults(suiteName: "group.com.Mappls.MapplsSDKDemo.DemoWidget")!.string(forKey: "button2")!
-                button3 = UserDefaults(suiteName: "group.com.Mappls.MapplsSDKDemo.DemoWidget")!.string(forKey: "button3")!
-                button4 = UserDefaults(suiteName: "group.com.Mappls.MapplsSDKDemo.DemoWidget")!.string(forKey: "button4")!
-                button5 = UserDefaults(suiteName: "group.com.Mappls.MapplsSDKDemo.DemoWidget")!.string(forKey: "button5")!
-                button6 = UserDefaults(suiteName: "group.com.Mappls.MapplsSDKDemo.DemoWidget")!.string(forKey: "button6")!
-                button7 = UserDefaults(suiteName: "group.com.Mappls.MapplsSDKDemo.DemoWidget")!.string(forKey: "button7")!
-                button8 = UserDefaults(suiteName: "group.com.Mappls.MapplsSDKDemo.DemoWidget")!.string(forKey: "button8")!
-                button9 = UserDefaults(suiteName: "group.com.Mappls.MapplsSDKDemo.DemoWidget")!.string(forKey: "button9")!
-                button10 = UserDefaults(suiteName: "group.com.Mappls.MapplsSDKDemo.DemoWidget")!.string(forKey: "button10")!
             }
         }
     }
@@ -216,7 +200,7 @@ struct CoolWidgetEntryView : View {
 
 @main
 struct DemoWidget: Widget {
-    let kind: String = "CoolWidget"
+    let kind: String = "MapplsWidget"
     
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider(), content: { entry in
